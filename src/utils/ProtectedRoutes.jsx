@@ -10,8 +10,8 @@ export const ProtectedRoutes = () => {
     const verifyUser = async () => {
       try {
         // Check if the user is authenticated
-        await axios.get("http://localhost:5555/auth/userprofile");
-
+        const hello = await axios.get("http://localhost:5555/auth/userprofile");
+        console.log(hello);
         setIsAuthenticated(true);
       } catch (error) {
         console.error("Authentication error:", error);

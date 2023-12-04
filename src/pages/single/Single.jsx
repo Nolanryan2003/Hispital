@@ -22,7 +22,7 @@ export const Single = () => {
       }
     };
     fetchPatient();
-  }, []);
+  }, [userId]);
 
   return (
     <div className="single">

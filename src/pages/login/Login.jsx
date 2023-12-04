@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { Toaster } from "react-hot-toast";
 import { toast } from "react-hot-toast";
@@ -8,7 +8,7 @@ import "./Login.scss";
 export const Login = () => {
   const navigate = useNavigate();
   const [data, setData] = useState({
-    userName: "",
+    username: "",
     password: "",
   });
   const loginUser = async (e) => {
@@ -23,9 +23,11 @@ export const Login = () => {
       if (data.error) {
         toast.error(data.error);
       } else {
-        setData({});
+        setData({
+          username: "",
+          password: "",
+        });
         toast.success("Login succesful welcome");
-
         navigate("/");
       }
     } catch (error) {
@@ -35,7 +37,7 @@ export const Login = () => {
   return (
     <div className="login">
       <Toaster position="top-center" toastOptions={3000} />
-      <form onClick={loginUser} className="loginContainer">
+      <form onSubmit={loginUser} className="loginContainer">
         <h1>Login</h1>
         <h2>SpecialtyMD</h2>
         <label>UserName</label>
@@ -54,10 +56,10 @@ export const Login = () => {
         />
         <button type="submit">Login</button>
         <p>
-          Don't have an account? <Link to="/register">Register here</Link>
+          {"Don't have an account?"} <Link to="/register">Register here</Link>
         </p>
         <p>
-          Do you work for a Hospital?{" "}
+          {"Do you work for a Hospital? "}
           <Link className="link" to="/hregister">
             Yes I do
           </Link>

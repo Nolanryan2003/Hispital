@@ -1,5 +1,5 @@
 import "./HistoryTable.scss";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import Axios from "axios";
 import { Box } from "@mui/material";
@@ -53,7 +53,7 @@ export const HistoryTable = () => {
       headerName: "Status",
       width: 90,
       cellClassName: "cell",
-      renderCell: (params) => {
+      renderCell: () => {
         return <div className="completeButton">Completed</div>;
       },
     },

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { Toaster } from "react-hot-toast";
 import { toast } from "react-hot-toast";
@@ -56,7 +56,7 @@ export const HospitalLogin = () => {
         />
         <button type="submit">Login</button>
         <p>
-          Don't have an account? <Link to="/hregister">Register here</Link>
+          {"Don't have an account?"} <Link to="/hregister">Register here</Link>
         </p>
         <p>
           Do you work for a specialty?{" "}

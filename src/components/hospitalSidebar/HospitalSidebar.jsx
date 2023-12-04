@@ -7,8 +7,6 @@ import axios from "axios";
 import { Toaster } from "react-hot-toast";
 import { toast } from "react-hot-toast";
 
-import React from "react";
-
 export const HospitalSidebar = () => {
   const [data, setData] = useState({
     dateOfbirth: "",
@@ -76,13 +74,16 @@ export const HospitalSidebar = () => {
             />
             <label>PhoneNumber</label>
             <input
-              type="text"
+              type="tel"
               placeholder="xxx-xxx-xxxx"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              required
               value={data.phoneNumber}
               onChange={(e) =>
                 setData({ ...data, phoneNumber: e.target.value })
               }
             />
+            <small>Format: 123-456-7891</small>
             <button type="submit">Send Consult</button>
           </form>
         </div>

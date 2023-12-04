@@ -1,8 +1,6 @@
 import { Home } from "./pages/home/home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { List } from "./pages/list/List";
 import { Single } from "./pages/single/Single";
-import { New } from "./pages/new/New";
 import { Register } from "./pages/register/Register";
 import { Login } from "./pages/login/Login";
 import { HospitalLogin } from "./pages/hospitalLogin/HospitalLogin";
