@@ -66,6 +66,7 @@ const login = asyncHandler(async (req, res) => {
         { expiresIn: "1h" },
         (err, token) => {
           if (err) throw err;
+
           res
             .cookie("jwt", token, {
               httpOnly: true,

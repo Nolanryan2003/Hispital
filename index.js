@@ -9,10 +9,13 @@ import cookieParser from "cookie-parser";
 import env from "dotenv";
 env.config();
 const app = express();
-
+const corsOptions = {
+  origin: "http://localhost:5173", // Replace with your frontend's URL
+  credentials: true, // This is important for sending cookies
+};
 app.use(express.json());
 app.use(urlencoded({ extended: false }));
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(cookieParser());
 
 app.use("/newPatient", newPatientRoute);
